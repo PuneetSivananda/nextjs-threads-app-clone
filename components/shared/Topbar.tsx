@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { SignOutButton, SignedIn } from "@clerk/nextjs"
+import { OrganizationSwitcher, SignOutButton, SignedIn } from "@clerk/nextjs"
 
 export default function Topbar(){
     return (
@@ -13,13 +13,14 @@ export default function Topbar(){
                     height={28}
                     />
                 <p className="text-heading3-bold text-light-1 max-xs:hidden">Threads</p>
-            <div className="flex items-center-gap-1">
+            </Link>
+            <div className="flex items-center gap-1">
                 <div className="block md:hidden">
                     <SignedIn>
                         <SignOutButton>
                             <div className="flex cursor-pointer">
                                 <Image
-                                    src="/assests/logoout.svg"
+                                    src="/assets/logout.svg"
                                     alt="logout"
                                     width={24}
                                     height={24}
@@ -28,8 +29,15 @@ export default function Topbar(){
                         </SignOutButton>
                     </SignedIn>
                 </div>
+                <OrganizationSwitcher
+                    appearance={{
+                        elements:{
+                            organizationSwitcherTrigger:"py-2 px-4"
+                        }
+                    }}
+                />
             </div>                
-            </Link>
+            
         </nav>
     )
 }
