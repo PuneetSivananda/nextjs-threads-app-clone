@@ -43,3 +43,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 [Threads App reference](https://www.youtube.com/watch?v=O5cmLDVTgAs&t=174s)
 
 npx create-next-app@latest ./
+
+add shadcn components using
+
+npx shadcn-ui@latest add <component>
